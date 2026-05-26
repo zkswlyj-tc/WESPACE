@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>WeSpace | Profile Chain</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app" class="wespace-site">
+      <!-- TOP BAR -->
+
+      <header class="topbar">
+        <div class="topbar-inner">
+          <nav class="top-links" aria-label="Top navigation">
+            <a href="#" data-page="home">WeSpace.com</a>
+            <span>|</span>
+            <a href="#" data-page="home">Home</a>
+            <a href="#" data-page="web">The Web</a>
+
+            <label class="radio-label">
+              <input type="radio" name="search-type" checked />
+              <span>The Web</span>
+            </label>
+
+            <label class="radio-label">
+              <input type="radio" name="search-type" />
+              <span>WeSpace</span>
+            </label>
+          </nav>
+
+          <form class="search-form">
+            <input
+              type="text"
+              placeholder="Search..."
+              aria-label="Search WeSpace"
+            />
+            <button type="submit">Search</button>
+          </form>
+
+          <nav class="account-links" aria-label="Account navigation">
+            <a href="#">Help</a>
+            <span>|</span>
+            <a href="#" id="signOutLink">SignOut</a>
+          </nav>
+        </div>
+
+        <div class="ad-banner">
+          <p>MAKE YOUR PROFILE SPARKLE!!! ADD GLITTER TEXT TODAY!!!</p>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#" data-page="home">Home</a>
+          <a href="#" data-page="browse">Browse</a>
+          <a href="#" data-page="search">Search</a>
+          <a href="#" data-page="invite">Invite</a>
+          <a href="#" data-page="mail">Mail</a>
+          <a href="#" data-page="blog">Blog</a>
+          <a href="#" data-page="bulletins">Bulletins</a>
+          <a href="#" data-page="friends">Friends</a>
+          <a href="#" data-page="groups">Groups</a>
+          <a href="#" data-page="events">Events</a>
+          <a href="#" data-page="videos">Videos</a>
+          <a href="#" data-page="music">Music</a>
+          <a href="#" data-page="classifieds">Classifieds</a>
+        </nav>
+      </header>
+
+      <!-- NOTIFICATION -->
+
+      <aside id="systemNotice" class="system-notice hidden" aria-live="polite">
+        <p id="systemNoticeText">Ava has posted a new blog entry.</p>
+        <button id="closeNotice" type="button" aria-label="Close notification">
+          x
+        </button>
+      </aside>
+
+      <!-- TRACE PANEL -->
+
+      <aside class="trace-panel">
+        <p>trace count: <span id="curiosityScore">0</span></p>
+        <p id="traceLabel">guest</p>
+      </aside>
+
+      <!-- MAIN LAYOUT -->
+
+      <main class="profile-layout">
+        <!-- LEFT PROFILE COLUMN -->
+
+        <section class="left-column">
+          <article class="profile-card">
+            <h1 id="profileName">Dash</h1>
+
+            <div class="profile-top">
+              <figure class="profile-image-slot">
+                <img
+                  id="mainProfileImage"
+                  src="assets/dash-profile.jpg"
+                  alt="Dash profile image"
+                />
+                <figcaption>profile image</figcaption>
+              </figure>
+
+              <div class="profile-basic-info">
+                <p id="profileGender">Male</p>
+                <p id="profileAge">22 years old</p>
+
+                <p id="profileLocation">
+                  Melbourne, VIC<br />
+                  Australia
+                </p>
+
+                <p class="status offline" id="profileStatus">
+                  <span class="status-dot"></span>
+                  Offline
+                </p>
+
+                <p class="last-login">
+                  Last Login<br />
+                  <span id="lastLogin">2 hours ago</span>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <p class="view-label">View My:</p>
+
+          <section class="contact-box">
+            <h2>Contacting <span id="contactName">Dash</span></h2>
+
+            <div class="contact-grid">
+              <button
+                type="button"
+                class="contact-action"
+                data-action="message"
+              >
+                <img src="assets/icons/send-message.svg" alt="" />
+                <span>Send Message</span>
+              </button>
+
+              <button
+                type="button"
+                class="contact-action"
+                data-action="forward"
+              >
+                <img src="assets/icons/forward.svg" alt="" />
+                <span>Forward to Friend</span>
+              </button>
+
+              <button
+                type="button"
+                class="contact-action"
+                data-action="add-friend"
+              >
+                <img src="assets/icons/add-friend.svg" alt="" />
+                <span>Add to Friends</span>
+              </button>
+
+              <button
+                type="button"
+                class="contact-action"
+                data-action="favorite"
+              >
+                <img src="assets/icons/favorite.svg" alt="" />
+                <span>Add to Favorites</span>
+              </button>
+
+              <button
+                type="button"
+                class="contact-action"
+                data-action="instant-message"
+              >
+                <img src="assets/icons/instant-message.svg" alt="" />
+                <span>Instant Message</span>
+              </button>
+
+              <button type="button" class="contact-action" data-action="block">
+                <img src="assets/icons/block.svg" alt="" />
+                <span>Block User</span>
+              </button>
+
+              <button type="button" class="contact-action" data-action="group">
+                <img src="assets/icons/group.svg" alt="" />
+                <span>Add to Group</span>
+              </button>
+
+              <button type="button" class="contact-action" data-action="rank">
+                <img src="assets/icons/rank.svg" alt="" />
+                <span>Rank User</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="url-box">
+            <h2>WeSpace URL</h2>
+            <p id="profileURL">wespace.com/dash</p>
+          </section>
+
+          <section class="mini-info-box">
+            <header></header>
+
+            <div class="mini-info-content">
+              <div>
+                <h3>Mood</h3>
+                <p id="profileMood">whatever</p>
+              </div>
+
+              <div>
+                <h3>Profile Song</h3>
+                <p id="profileSong">Lips of an Angel — Hinder</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- RIGHT PROFILE COLUMN -->
+
+        <section class="right-column">
+          <section class="network-box">
+            <h2 id="networkText">Dash is in your extended network</h2>
+          </section>
+
+          <section class="profile-blurb-box">
+            <h2 id="blurbTitle">Dash's Blurbs</h2>
+
+            <div id="profileBlurb">
+              <p>not posting about this.</p>
+              <p>ppl make everything deeper than it is.</p>
+              <p>
+                if someone wanted space they could've just said that properly.
+              </p>
+            </div>
+          </section>
+
+          <section class="friend-space">
+            <header>
+              <h2 id="friendSpaceTitle">Dash's Friend Space</h2>
+            </header>
+
+            <div class="friend-space-body">
+              <h3 id="friendCount">Dash has 4 friends.</h3>
+
+              <div class="friend-grid">
+                <article class="friend-card" data-character="ava">
+                  <button type="button" class="friend-button">
+                    <h4>Ava</h4>
+                    <img src="assets/ava-profile.jpg" alt="Ava profile image" />
+                  </button>
+                </article>
+
+                <article class="friend-card" data-character="coco">
+                  <button type="button" class="friend-button">
+                    <h4>CoCo</h4>
+                    <img
+                      src="assets/coco-profile.jpg"
+                      alt="CoCo profile image"
+                    />
+                  </button>
+                </article>
+
+                <article class="friend-card" data-character="beth">
+                  <button type="button" class="friend-button">
+                    <h4>Beth</h4>
+                    <img
+                      src="assets/beth-profile.jpg"
+                      alt="Beth profile image"
+                    />
+                  </button>
+                </article>
+
+                <article class="friend-card" data-character="emily">
+                  <button type="button" class="friend-button">
+                    <h4>Em</h4>
+                    <img
+                      src="assets/emily-profile.jpg"
+                      alt="Emily profile image"
+                    />
+                  </button>
+                </article>
+              </div>
+
+              <button
+                type="button"
+                class="view-all-friends"
+                id="viewAllFriends"
+              >
+                &gt;&gt; View all friends
+              </button>
+            </div>
+          </section>
+
+          <!-- CURRENT PROFILE BLOG AREA -->
+
+          <section class="blog-feed" id="blogFeed">
+            <header class="feed-header">
+              <h2 id="feedTitle">Dash's Latest Blog Entries</h2>
+            </header>
+
+            <div id="profileContent"></div>
+          </section>
+
+          <!-- HIDDEN SYSTEM CONTENT -->
+
+          <section class="system-layer" id="systemLayer">
+            <article class="evidence-board hidden" id="evidenceBoard">
+              <header>
+                <p class="post-meta">hidden folder</p>
+                <h3>digi_autopsy</h3>
+              </header>
+
+              <p>recovered from Emily V.'s profile chain.</p>
+              <p>drag each saved piece into a folder.</p>
+
+              <div class="fragment-bank">
+                <button type="button" class="fragment" draggable="true">
+                  Ava pinned Emily's name.
+                </button>
+
+                <button type="button" class="fragment" draggable="true">
+                  Beth told people to text her for proof.
+                </button>
+
+                <button type="button" class="fragment" draggable="true">
+                  CoCo reposted after saying she was not involved.
+                </button>
+
+                <button type="button" class="fragment" draggable="true">
+                  Dash answered without answering.
+                </button>
+
+                <button type="button" class="fragment" draggable="true">
+                  You opened a private entry.
+                </button>
+              </div>
+
+              <div class="sort-columns">
+                <section class="sort-box" data-zone="evidence">
+                  <h4>saved</h4>
+                </section>
+
+                <section class="sort-box" data-zone="assumption">
+                  <h4>assumed</h4>
+                </section>
+              </div>
+            </article>
+
+            <article class="final-post hidden" id="finalPost">
+              <header>
+                <p class="post-meta">Emily posted 3 days ago</p>
+                <h3>log out</h3>
+              </header>
+
+              <p>count how many pages you opened first.</p>
+              <p>then log out.</p>
+
+              <div class="post-actions">
+                <button type="button" data-action="share-final">share</button>
+                <button type="button" data-action="comment-final">
+                  comment
+                </button>
+                <button type="button" data-action="report-final">report</button>
+                <button type="button" id="logOutButton" data-action="log-out">
+                  sign out
+                </button>
+              </div>
+            </article>
+          </section>
+        </section>
+      </main>
+
+      <!-- PROFILE NAV -->
+
+      <nav class="story-flow" aria-label="Profile navigation">
+        <button type="button" data-character="ava">Ava</button>
+        <button type="button" data-character="beth">Beth</button>
+        <button type="button" data-character="coco">CoCo</button>
+        <button type="button" data-character="dash">Dash</button>
+        <button type="button" data-character="emily">Emily</button>
+      </nav>
+
+      <!-- END SCREEN -->
+
+      <section id="endScreen" class="end-screen hidden">
+        <h2>THE DIGI AUTOPSY IS COMPLETE.</h2>
+
+        <div class="end-receipt">
+          <p>Ava posted. Beth spread it. CoCo watched. Dash stayed vague.</p>
+          <p>You kept clicking.</p>
+        </div>
+
+        <button type="button" id="restartExperience">Return to WeSpace</button>
+      </section>
+
+      <!-- PROFILE CONTENT TEMPLATES -->
+
+      <template id="feed-dash">
+        <article class="blog-post dash-post">
+          <header>
+            <p class="post-meta">Dash posted 2 hours ago</p>
+            <h3>not today</h3>
+          </header>
+
+          <p>not answering questions on here.</p>
+          <p>
+            funny how ppl only show screenshots that make them look innocent.
+          </p>
+          <p>if someone wants to talk they know where to find me.</p>
+        </article>
+
+        <article class="blog-post dash-post">
+          <header>
+            <p class="post-meta">Dash posted 2 days ago</p>
+            <h3>everyone needs to chill</h3>
+          </header>
+
+          <p>ppl keep acting like saying hey is a crime now.</p>
+          <p>
+            some girls say one thing and then act shocked when u believe them.
+          </p>
+          <p>not naming anyone. don't start.</p>
+        </article>
+
+        <article class="blog-post photo-post dash-post">
+          <header>
+            <p class="post-meta">Dash posted 4 days ago</p>
+            <h3>late walk</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/street.png" alt="Street at night" />
+            <figcaption>needed air</figcaption>
+          </figure>
+
+          <p>went out for like an hour and forgot where i was walking.</p>
+          <p>city looks better when nobody is talking.</p>
+        </article>
+
+        <article class="blog-post dash-post">
+          <header>
+            <p class="post-meta">Dash posted 5 days ago</p>
+            <h3>song stuck in my head</h3>
+          </header>
+
+          <p>Lips of an Angel has been on repeat for like 3 days.</p>
+          <p>bad song to have stuck in ur head but whatever.</p>
+        </article>
+
+        <article class="blog-post photo-post dash-post">
+          <header>
+            <p class="post-meta">Dash posted 6 days ago</p>
+            <h3>finally cleaned my room</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/room.png" alt="Dash's room with band posters" />
+            <figcaption>ignore the posters falling off lol</figcaption>
+          </figure>
+
+          <p>
+            room is still a mess but it looks cool in low light so whatever.
+          </p>
+          <p>need new speakers. these ones keep making that crunchy sound.</p>
+        </article>
+
+        <article class="blog-post dash-post">
+          <header>
+            <p class="post-meta">Dash posted 9 days ago</p>
+            <h3>people are confusing</h3>
+          </header>
+
+          <p>like if u don't wanna talk then don't reply.</p>
+          <p>not that hard.</p>
+        </article>
+      </template>
+
+      <template id="feed-ava">
+        <article class="blog-post pinned-post ava-post">
+          <header>
+            <p class="post-meta">Ava pinned this · 4 days ago</p>
+            <h3>@em</h3>
+          </header>
+
+          <p>
+            if you wanted him that badly you honestly could’ve just said
+            something instead of f*cking my bf at that party at Coco’s the other
+            night.
+          </p>
+
+          <p>
+            stop pretending sweet and innocent lol, i genuinely just want to
+            throw up for real.
+          </p>
+
+          <p>
+            people have been talking and i guess i’m the last person to know.
+          </p>
+
+          <p>
+            some people really do tell on themselves without even realizing it.
+          </p>
+
+          <p>3 years down the drain. fck it, somebody wanna come drink?</p>
+
+          <div class="post-actions">
+            <button type="button" data-action="open-comments">
+              read comments
+            </button>
+          </div>
+        </article>
+
+        <article class="comment-wall hidden" id="commentWall">
+          <h3>Comments</h3>
+
+          <div class="comment">
+            <img src="assets/beth-profile.jpg" alt="Beth icon" />
+
+            <div>
+              <p>
+                <strong>Beth:</strong>
+                text me if u want proof. i'm not putting everything here.
+              </p>
+
+              <button type="button" data-action="visit-beth">
+                open bulletin
+              </button>
+            </div>
+          </div>
+
+          <div class="comment">
+            <img src="assets/coco-profile.jpg" alt="CoCo icon" />
+
+            <div>
+              <p>
+                <strong>CoCo:</strong>
+                i believe u babe. i just don’t want ppl acting like i planned
+                anything bc it happened at mine.
+              </p>
+
+              <button type="button" data-action="visit-coco">
+                read repost
+              </button>
+            </div>
+          </div>
+
+          <div class="comment">
+            <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+            <div>
+              <p>
+                <strong>Emily:</strong>
+                Ava please stop. you’re missing half of what happened.
+              </p>
+
+              <button type="button" data-action="visit-emily">
+                find emily
+              </button>
+            </div>
+          </div>
+
+          <div class="comment">
+            <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+            <div>
+              <p>
+                <strong>anon_03:</strong>
+                wait this was at Coco’s party??
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-post photo-post ava-post">
+          <header>
+            <p class="post-meta">Ava posted yesterday</p>
+            <h3>bread fixes most things</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/meals.png" alt="Table with bread and drinks" />
+            <figcaption>dinner was actually cute</figcaption>
+          </figure>
+
+          <p>went out after class and ordered way too much bread.</p>
+          <p>garlic makes everything better. this is my official statement.</p>
+        </article>
+
+        <article class="blog-post photo-post ava-post">
+          <header>
+            <p class="post-meta">Ava posted 6 days ago</p>
+            <h3>outfit before i changed my mind</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/mirror.png" alt="Mirror outfit photo" />
+            <figcaption>this looked better in my head</figcaption>
+          </figure>
+
+          <p>took 20 photos and hated 19.</p>
+          <p>posting anyway because my hair behaved for once.</p>
+        </article>
+
+        <article class="blog-post ava-post">
+          <header>
+            <p class="post-meta">Ava posted 6 days ago</p>
+            <h3>need a reset</h3>
+          </header>
+
+          <p>deleting old pics soon. my page looks so random rn.</p>
+          <p>
+            might change my song too. still choosing between angry and
+            embarrassing.
+          </p>
+        </article>
+
+        <article class="blog-post ava-post">
+          <header>
+            <p class="post-meta">Ava posted 6 days ago</p>
+            <h3>i notice everything btw</h3>
+          </header>
+
+          <p>not in a creepy way.</p>
+          <p>i just remember what people say and what they do after.</p>
+          <p>usually those are not the same thing.</p>
+        </article>
+      </template>
+
+      <template id="feed-beth">
+        <article
+          class="blog-post beth-post leak-item locked"
+          id="bethLeaks"
+          data-leak="beth-bulletin"
+        >
+          <header>
+            <p class="post-meta">Beth posted 9 minutes ago</p>
+            <h3>since ppl keep asking</h3>
+          </header>
+
+          <p>yes i saw it too.</p>
+
+          <p>
+            not posting everything on here bc apparently that makes me “messy”.
+          </p>
+
+          <p>if u actually know us and want proof, text me.</p>
+
+          <p>
+            but don’t sit there acting like Ava made it up when half of u were
+            whispering about it already.
+          </p>
+
+          <div class="post-actions">
+            <button type="button" data-action="reveal-leak">
+              save bulletin
+            </button>
+          </div>
+        </article>
+
+        <article class="blog-post photo-post beth-post">
+          <header>
+            <p class="post-meta">Beth posted yesterday</p>
+            <h3>girls night soon?</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/cafe.png" alt="Cafe table" />
+            <figcaption>need this again</figcaption>
+          </figure>
+
+          <p>i need everyone to stop being broke for one weekend pls.</p>
+          <p>Ava said she knows a place so i'm trusting her taste for once.</p>
+        </article>
+
+        <article class="blog-post photo-post beth-post">
+          <header>
+            <p class="post-meta">Beth posted 3 days ago</p>
+            <h3>camera roll is dangerous</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/phone.png" alt="Phone photo" />
+            <figcaption>too many pics honestly</figcaption>
+          </figure>
+
+          <p>found so many pics from last week omg.</p>
+          <p>half of them are blurry but blurry pics are funnier anyway.</p>
+          <p>might upload later if nobody begs me not to.</p>
+        </article>
+
+        <article class="blog-post beth-post">
+          <header>
+            <p class="post-meta">Beth posted 5 days ago</p>
+            <h3>loyalty check</h3>
+          </header>
+
+          <p>if my friend looks stupid then i look stupid too.</p>
+          <p>so yeah i'm saying something.</p>
+        </article>
+      </template>
+
+      <template id="feed-coco">
+        <article class="blog-post coco-feed repost-post">
+          <header>
+            <p class="post-meta">CoCo reposted 7 minutes ago</p>
+            <h3>not my story but still</h3>
+          </header>
+
+          <div class="repost-box">
+            <p class="repost-meta">reposted from Ava</p>
+
+            <p>
+              @em if you wanted him that badly you honestly could’ve just said
+              something.
+            </p>
+
+            <p>
+              people have been talking and i guess i’m the last person to know.
+            </p>
+          </div>
+
+          <p>
+            i’m not gonna sit here and act like Ava is crazy when ppl were
+            literally whispering about this before she even posted.
+          </p>
+
+          <p>i love her and i’m sorry she found out this way.</p>
+
+          <p>
+            but please stop saying “Coco’s party” like i personally handed
+            everyone a script.
+          </p>
+
+          <div class="deleted-post" id="deletedPost">
+            <p>wait did Emily actually say anything yet?</p>
+
+            <button type="button" data-action="view-cache">
+              view cached copy
+            </button>
+          </div>
+        </article>
+
+        <article class="blog-post coco-feed">
+          <header>
+            <p class="post-meta">CoCo posted 22 minutes ago</p>
+            <h3>quick thing</h3>
+          </header>
+
+          <p>yes, people were at my place.</p>
+
+          <p>
+            no, i did not “set anything up”. that is actually such a weird thing
+            to say.
+          </p>
+
+          <p>i was in the kitchen half the night trying to find cups.</p>
+
+          <p>
+            believe Ava or don’t, but don’t make me the host of everyone’s bad
+            decisions.
+          </p>
+        </article>
+
+        <article class="blog-post coco-feed repost-post">
+          <header>
+            <p class="post-meta">CoCo reposted 31 minutes ago</p>
+            <h3>this part</h3>
+          </header>
+
+          <div class="repost-box">
+            <p class="repost-meta">reposted from Beth</p>
+
+            <p>if u actually know us and want proof, text me.</p>
+
+            <p>but don’t sit there acting like Ava made it up.</p>
+          </div>
+
+          <p>exactly. like everyone suddenly has amnesia.</p>
+
+          <p>
+            i’m not posting screenshots but people heard stuff before Ava even
+            said a word.
+          </p>
+        </article>
+
+        <article class="blog-post coco-feed">
+          <header>
+            <p class="post-meta">CoCo posted 48 minutes ago</p>
+            <h3>deleting in a sec</h3>
+          </header>
+
+          <p>
+            some of u are way too comfortable asking me for details when u
+            weren’t even there.
+          </p>
+
+          <p>if Ava wants to talk, that’s Ava’s thing.</p>
+
+          <p>
+            i’m only saying don’t rewrite the whole night just because now it’s
+            public.
+          </p>
+        </article>
+
+        <article class="blog-post photo-post coco-feed">
+          <header>
+            <p class="post-meta">CoCo posted yesterday</p>
+            <h3>shoe check before we left</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img
+              src="assets/shoes.png"
+              alt="Three pairs of shoes in a casual shoe check photo"
+            />
+            <figcaption>why do shoes say so much about ppl lol</figcaption>
+          </figure>
+
+          <p>
+            took this outside before everyone started yelling about where to go
+            next.
+          </p>
+
+          <p>
+            pink sweats girlie was the only one dressed for comfort and honestly
+            she won.
+          </p>
+        </article>
+
+        <article class="blog-post coco-feed">
+          <header>
+            <p class="post-meta">CoCo posted 2 days ago</p>
+            <h3>never hosting again</h3>
+          </header>
+
+          <p>my room still smells like perfume and cheap mixer.</p>
+
+          <p>
+            found someone’s earring under my desk and three cups in places cups
+            should not be.
+          </p>
+
+          <p>next time we are meeting somewhere else.</p>
+        </article>
+
+        <article class="blog-post photo-post coco-feed">
+          <header>
+            <p class="post-meta">CoCo posted 4 days ago</p>
+            <h3>fake productive</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/desk.png" alt="Desk with laptop and notes" />
+            <figcaption>studied for maybe 12 minutes</figcaption>
+          </figure>
+
+          <p>opened my laptop, made tea, changed my song, then did nothing.</p>
+
+          <p>still counting it as studying.</p>
+        </article>
+
+        <article class="blog-post coco-feed">
+          <header>
+            <p class="post-meta">CoCo posted 5 days ago</p>
+            <h3>not leaving my house</h3>
+          </header>
+
+          <p>staying in tonight. my social battery is dead.</p>
+
+          <p>someone update me if anything interesting happens.</p>
+        </article>
+
+        <article class="blog-post coco-feed">
+          <header>
+            <p class="post-meta">CoCo posted 7 days ago</p>
+            <h3>people read everything wrong</h3>
+          </header>
+
+          <p>
+            u can literally just repost something and suddenly everyone thinks
+            it's about them.
+          </p>
+
+          <p>sometimes i just think things are worth sharing.</p>
+        </article>
+      </template>
+      <template id="feed-emily">
+        <article class="emily-archive" id="emilyArchive">
+          <header>
+            <p class="post-meta">Emily posted 3 days ago</p>
+            <h3>last login: <span id="emilyStatus">3 days ago</span></h3>
+          </header>
+
+          <div class="archive-post">
+            <h4>please stop</h4>
+
+            <p>
+              i know people are upset. i get why it looks bad from the outside.
+            </p>
+
+            <p>
+              but there are things being said about me that are not true, and
+              every time i try to explain, it turns into another screenshot.
+            </p>
+
+            <p>
+              i told him to stop messaging me. i blocked him after. i thought
+              that would be enough.
+            </p>
+
+            <p>
+              i’m not asking anyone to pick me. i just don’t want strangers
+              deciding what happened from cropped posts and comments.
+            </p>
+          </div>
+
+          <section class="comment-wall emily-comments">
+            <h3>Comments</h3>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>anon_12:</strong>
+                  if it “wasn’t true” then why is everyone saying the same thing
+                  lol
+                </p>
+              </div>
+            </div>
+
+            <div class="comment emily-reply">
+              <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+              <div>
+                <p>
+                  <strong>Emily:</strong>
+                  because everyone is repeating the same version.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>luvlybones:</strong>
+                  girl u could have just stayed away from someone else's bf.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment emily-reply">
+              <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+              <div>
+                <p>
+                  <strong>Emily:</strong>
+                  i did. that is what i keep saying.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment hate-comment">
+              <img src="assets/beth-profile.jpg" alt="Beth icon" />
+
+              <div>
+                <p>
+                  <strong>Beth:</strong>
+                  then why didn’t u say any of this before Ava had to find out
+                  from everyone else?
+                </p>
+              </div>
+            </div>
+
+            <div class="comment emily-reply">
+              <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+              <div>
+                <p>
+                  <strong>Emily:</strong>
+                  i didn’t know everyone was talking about it until she posted.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>xoxorach:</strong>
+                  blocking him after the party is not the flex u think it is.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>anon_03:</strong>
+                  Ava said people saw u. like what else is there to explain.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment emily-reply">
+              <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+              <div>
+                <p>
+                  <strong>Emily:</strong>
+                  i don’t know how to prove what didn’t happen.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment hate-comment soft-hate">
+              <img src="assets/coco-profile.jpg" alt="CoCo icon" />
+
+              <div>
+                <p>
+                  <strong>CoCo:</strong>
+                  Em i’m not trying to attack u but people were talking before
+                  Ava posted. that didn’t come from nowhere.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment emily-reply">
+              <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+              <div>
+                <p>
+                  <strong>Emily:</strong>
+                  i know. that’s what scares me.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <div class="archive-post locked-entry">
+            <h4>private entry. don't repost this.</h4>
+
+            <p class="blurred-text">this entry is private.</p>
+
+            <button type="button" data-action="view-private-entry">
+              open entry
+            </button>
+          </div>
+        </article>
+
+        <article class="blog-post emily-archive">
+          <header>
+            <p class="post-meta">Emily posted 4 days ago</p>
+            <h3>small reminder</h3>
+          </header>
+
+          <p>if i don't reply, please don't message me somewhere else.</p>
+          <p>i’m probably just overwhelmed. it’s not personal.</p>
+
+          <section class="comment-wall emily-comments small-thread">
+            <h3>Comments</h3>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>anon_08:</strong>
+                  this aged weird.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>missmaya:</strong>
+                  maybe reply to people’s girlfriends then?
+                </p>
+              </div>
+            </div>
+
+            <div class="comment emily-reply">
+              <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+              <div>
+                <p>
+                  <strong>Emily:</strong>
+                  please stop commenting on old posts.
+                </p>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="blog-post emily-archive">
+          <header>
+            <p class="post-meta">Emily posted 5 days ago</p>
+            <h3>quiet week pls</h3>
+          </header>
+
+          <p>i think i need a few days where nobody needs anything from me.</p>
+          <p>not in a dramatic way. just tired.</p>
+
+          <section class="comment-wall emily-comments small-thread">
+            <h3>Comments</h3>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>anon_22:</strong>
+                  “quiet week” after causing drama is crazy.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment emily-reply">
+              <img src="assets/emily-profile.jpg" alt="Emily icon" />
+
+              <div>
+                <p>
+                  <strong>Emily:</strong>
+                  please stop.
+                </p>
+              </div>
+            </div>
+
+            <div class="comment hate-comment">
+              <img src="assets/anonymous-profile.jpg" alt="Anonymous icon" />
+
+              <div>
+                <p>
+                  <strong>anon_22:</strong>
+                  convenient.
+                </p>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="blog-post photo-post emily-archive">
+          <header>
+            <p class="post-meta">Emily posted 6 days ago</p>
+            <h3>walked home slow</h3>
+          </header>
+
+          <figure class="blog-photo">
+            <img src="assets/sky.png" alt="Soft evening sky" />
+            <figcaption>sky looked fake for like five minutes</figcaption>
+          </figure>
+
+          <p>didn't feel like going straight home yet.</p>
+        </article>
+
+        <article class="blog-post emily-archive">
+          <header>
+            <p class="post-meta">Emily posted 8 days ago</p>
+            <h3>draft folder is full again</h3>
+          </header>
+
+          <p>i keep writing replies and deleting them.</p>
+          <p>
+            maybe silence is easier. maybe it just looks worse from outside.
+          </p>
+        </article>
+      </template>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
