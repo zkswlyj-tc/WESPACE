@@ -273,8 +273,8 @@ dash: {
   };
 
   const state = {
-    currentCharacter: "dash",
-    activity: 0,
+  currentCharacter: "ava",
+  activity: 0,
 
     visits: {
       ava: 0,
@@ -1319,19 +1319,19 @@ dash: {
     }
   }, 3000);
 
-  function init() {
-    setupDragAndDrop();
+function init() {
+  setupDragAndDrop();
 
-    evidenceBoard.classList.add("hidden");
-    finalPost.classList.add("hidden");
-    endScreen.classList.add("hidden");
+  evidenceBoard.classList.add("hidden");
+  finalPost.classList.add("hidden");
+  endScreen.classList.add("hidden");
 
-    switchCharacter("dash", false);
+  switchCharacter("ava", false);
 
-    setTimeout(() => {
-      showNotice(pick(notices.start), false, 6000);
-    }, 700);
-  }
+  setTimeout(() => {
+    showNotice(pick(notices.start), false, 6000);
+  }, 700);
+}
 
-  init();
+init();
 });
